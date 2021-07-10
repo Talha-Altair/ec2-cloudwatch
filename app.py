@@ -16,8 +16,9 @@ def start():
     num = random.randint(0,10000)
 
     # print(f"Current random number is {num}")
-    
+
     logger.info(f"Current random number is {num}")
+
     if num%2 == 0:
       # print(f"current number is even")
       logger.info(f"current number is even")
