@@ -6,16 +6,17 @@ import random
 app = Flask(__name__)
 
 logging.basicConfig(level = logging.INFO)
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+logger = logging.getLogger("werkzeug")
 logger.addHandler(watchtower.CloudWatchLogHandler())
 
-                                 
 @app.route('/')
 def start():
 
     num = random.randint(0,10000)
 
     # print(f"Current random number is {num}")
+    
     logger.info(f"Current random number is {num}")
     if num%2 == 0:
       # print(f"current number is even")
